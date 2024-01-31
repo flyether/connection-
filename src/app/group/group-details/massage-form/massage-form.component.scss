@@ -1,0 +1,31 @@
+.form {
+   
+   display: flex;
+   flex-direction: row;
+   gap: 40px ;
+   align-items: flex-start;
+ }
+
+.form__input {
+   width: 100%;
+   padding: 7px;
+   border: 1px solid #B9B9B9;
+   border-radius: 5px;
+   outline: none;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 19px;
+   color: #000000;
+ }
+ 
+ .error__message {
+   font-weight: 400;
+   font-size: 12px;
+   line-height: 16px;
+   color: #CC2929;
+
+ }
+ .error,
+ .error:focus {
+   border: 1px solid #CC2929;
+ }

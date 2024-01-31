@@ -1,0 +1,13 @@
+<div [ngClass]="
+{
+   wrapper: true,
+anotherColor: people.conversation
+}">
+
+<button class="link"   (click)="goTo(people.conversationId)" type="button" *ngIf="people.conversation; else noConversation">{{people.name.S}}</button>
+<ng-template #noConversation>
+  <button class="link"   type="button" (click)="addConversation(people.uid.S)">add conversation with {{people.name.S}}</button>
+</ng-template>
+
+  </div>
+  

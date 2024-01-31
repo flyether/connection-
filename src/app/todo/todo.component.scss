@@ -1,0 +1,34 @@
+:host{
+display: flex;
+flex-direction: column;
+
+.container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   align-self: center;
+   background: #0e8369;
+   box-shadow: 2px 0px 4px 0px #1fa87b;
+   min-width: 80px;
+   height: 32px;
+   color: white;
+   border-radius: 5px;
+   cursor: pointer;
+   margin: auto;
+ }
+ .container:hover{
+  background: #17a55e;
+ }
+
+ .text{
+  height: 180px;
+  
+  aspect-ratio: 1/cos(30deg);
+  clip-path: polygon(50% -50%,100% 50%,50% 150%,0 50%);
+  background: linear-gradient(-45deg,#CD8C52,#5E9FA3);
+   align-self: center;
+   font-size: 33px;
+   font-weight: bolder;
+   margin: 120px auto;
+ }
+}

@@ -1,0 +1,40 @@
+:host {
+  width: 100%;
+  display: flex;
+  max-width: 1440px;
+  justify-content: center;
+  align-items: center;
+
+  margin: 200px auto;
+  .block {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .text,
+  .link {
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 28px;
+    text-align: left;
+  }
+  .column {
+    display: flex;
+  }
+  .link {
+    cursor: pointer;
+  }
+  .link:hover {
+    color: rgb(65, 138, 247);
+  }
+  .ico{
+    width: 80px; 
+    font-size: 80px;
+    height: 80px;
+  }
+}

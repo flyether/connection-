@@ -1,0 +1,4 @@
+<button class="container" [routerLink]="link" [type]="type" [disabled]="disabled" (click)="handleClick()" *ngIf="link; else customClick">{{ text }}</button>
+<ng-template #customClick>
+  <button class="container" [type]="type" [disabled]="disabled" (click)="handleClick()">{{ text }}</button>
+</ng-template>

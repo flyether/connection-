@@ -1,0 +1,52 @@
+<div *ngIf="groupDialogs$ | async as dialogs">
+  <div class="wrapper" *ngIf="groupDialogs$ | async as dialogs">
+    <div class="row">
+      <div class="title">{{ groupData() | async }}</div>
+      <div class="link" [routerLink]="''">Go back to the Home page</div>
+    </div>
+
+    <div class="button_block">
+      <app-button-standard
+        [type]="'button'"
+        [disabled]="isTimerInRange(selectedTimer$ | async)"
+        text="Update"
+        (buttonClick)="onClickUpdate()"
+      ></app-button-standard>
+
+      <div *ngIf="selectedTimer$ | async as timerDialog">
+        <div *ngIf="timerDialog < 59" class="timer">{{ timerDialog + 1 }}</div>
+      </div>
+
+      <app-button-standard
+        *ngIf="ownerH"
+        [type]="'button'"
+        [disabled]="isDisableDel"
+        text="Delete"
+        (buttonClick)="ClickDel()"
+      ></app-button-standard>
+      <app-massage-form [typeInput]="'group'" [gropeId]="id"></app-massage-form>
+    </div>
+    <ng-container *ngFor="let dialog of dialogs | sortDialog">
+      <div
+        [ngClass]="{
+          div: myUid !== dialog.authorID.S,
+          divMy: myUid === dialog.authorID.S
+        }"
+      >
+        <div>
+          created at :<span class="green">
+            {{ dialog.createdAt.S | date : "short" }}</span
+          >
+        </div>
+        <div>
+          name :<span class="green">
+            {{ authorName(dialog.authorID.S) | async }}</span
+          >
+        </div>
+        <div>
+          message :<span class="green"> {{ dialog.message.S }}</span>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

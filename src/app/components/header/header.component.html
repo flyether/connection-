@@ -1,0 +1,27 @@
+<div class="row">
+  <app-button-standard
+    [type]="'button'"
+    [text]="theme"
+    (buttonClick)="onClickTheme()"
+  ></app-button-standard>
+
+  <div class="nav">
+   <div *ngFor="let item of menuItem" class="mat_icon">
+     <div
+       class="nav_item"
+       routerLinkActive="active-link"
+       [routerLinkActiveOptions]="{ exact: true }"
+       [routerLink]="item.rout"
+     >
+ 
+       <mat-icon
+         aria-hidden="false"
+         [attr.aria-label]="item.icon + ' icon'"
+         fontIcon="{{item.icon}}"
+       ></mat-icon>
+       <p> {{ item.text }}</p>
+      
+     </div>
+   </div>
+ </div>
+</div>

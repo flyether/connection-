@@ -1,0 +1,77 @@
+<div class="wrapper" *ngIf="profile$ |async as profile">
+   <div class="rowTitle"> <h3 class="center"> Profile card</h3>
+   <app-button-standard
+   [type]="'button'"
+   text="Logout"
+   [disabled]="isDisabledExit"
+   (buttonClick)="exit()"
+ ></app-button-standard>
+</div>
+   <div class="div" > user id :<span class="green"> {{profile.uid.S }}</span></div>
+   <div class="div" > email address : <span class="green">{{profile.email.S }}</span></div>
+   <div class="div" > created at :<span class="green"> {{profile.createdAt.S | date: "fullDate"}}</span></div>
+   <div class="row">
+      <ng-container *ngIf="!isEdit; else edit">
+   <div class="div" >user name: <span class="green"> {{profile.name.S}}</span></div>
+</ng-container>
+<ng-template #edit>
+   <form
+  class="form__container"
+  [formGroup]="myReactForm"
+  (ngSubmit)="submitForm()"
+>
+<div class="row">
+<input
+[ngClass]="
+{
+
+form__input: true,
+error:  myReactForm.controls['name'].invalid &&
+  myReactForm.controls['name'].touched,
+} "
+formControlName="name"
+type="text"
+/>
+<app-button-standard
+[type]="'submit'"
+text="save"
+
+></app-button-standard>
+
+<app-button-standard
+[type]="'button'"
+text="cancel"
+(buttonClick)="isEdit = !isEdit"
+></app-button-standard>
+
+</div>
+<span
+*ngIf="
+  myReactForm.controls['name'].invalid &&
+  (myReactForm.controls['name'].touched)
+"
+class="error__message"
+>
+<ng-container *ngIf="myReactForm.controls['name'].errors?.required">
+  Please enter a name
+</ng-container>
+<ng-container *ngIf="myReactForm.controls['name'].errors?.pattern">
+  allowed only letters or spaces
+</ng-container>
+<ng-container *ngIf="myReactForm.controls['name'].errors?.maxLength">
+  maximum 30 characters
+</ng-container>
+</span>
+
+    
+</form>
+
+</ng-template>
+   <app-button-standard
+   [type]="'button'"
+   text="edit"
+   (buttonClick)="isEdit = !isEdit"
+ ></app-button-standard>
+</div>
+</div>
+

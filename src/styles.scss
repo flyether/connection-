@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+
+*{box-sizing: border-box;}
+body {
+  display: block;
+  margin: 0;
+  font-family: Roboto;
+  background-color: rgb(241, 239, 239);
+}
+button {
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: bold;
+}
+.text {
+
+  text-align: right;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.text__gray {
+  color: #929292;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+p{
+  margin: 0;
+}
+body.dark-theme {
+  color: white;
+  background-color: rgb(57, 160, 143);
+}
+

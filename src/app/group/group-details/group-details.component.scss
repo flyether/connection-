@@ -1,0 +1,106 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+
+  box-shadow: 22px 32px 24px rgba(24, 26, 28, 0.01),
+    10px 14px 17px rgba(24, 26, 28, 0.02), 2px 4px 10px rgba(24, 26, 28, 0.02),
+    0px 0px 0px rgba(24, 26, 28, 0.02);
+  border-radius: 5px;
+  justify-content: center;
+  font-weight: bold;
+  color: dimgray;
+  gap: 20px;
+}
+
+.link{
+  font-size:larger;
+  cursor: pointer;
+}
+.title{
+  font-size:larger;
+
+}
+.link:hover{
+color: #075040;
+border-bottom: #036e5d 1px solid;
+}
+.div,
+.divMy {
+  width: 300px;
+  padding: 20px;
+  margin-left: 26px;
+display: flex;
+flex-direction: column;
+  position: relative;
+  border-radius: 10px;
+}
+.div:before,
+.divMy:before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 100%;
+  top: calc(50% - 12px);
+  border-top: 12px solid transparent;
+  border-right: 24px solid #b5ddd4;
+  border-bottom: 12px solid transparent;
+}
+.div {
+  background: #b5ddd4;
+}
+.div:before {
+  border-right: 24px solid #b5ddd4;
+}
+
+.divMy {
+  align-self: end;
+  background-color: rgb(242, 215, 250);
+  justify-content: flex-end;
+}
+.divMy:before {
+  border-right: 24px solid rgb(242, 215, 250);
+}
+
+.row {
+  display: flex;
+  gap: 30px;
+}
+.center {
+  align-self: center;
+}
+.del {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  color: rgb(48, 45, 45);
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+}
+.button_block {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 50px;
+}
+
+.green {
+  color: #036e5d;
+}
+.timer {
+  width: 80px;
+  border: #0e8369 solid 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  font-weight: bold;
+  background-color: rgb(240, 216, 186);
+  box-shadow: 2px 0px 4px 0px #1fa87b;
+  height: 32px;
+  color: #0e8369;
+  border-radius: 5px;
+}

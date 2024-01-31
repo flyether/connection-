@@ -1,0 +1,39 @@
+.container {
+  background: #e93b75;
+  border: 1.5px solid #f42c4f;
+  max-width: 600px;
+  min-width: 300px;
+  min-height: 200px;
+  position: absolute;
+  top: 200px;
+  left: 33%;
+  z-index: 999;
+  display: flex;
+  padding: 28px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border-radius: 15px;
+  font-size: 18px;
+  gap: 30px;
+}
+
+.cross__icon {
+  font-weight: 400;
+  margin-left: auto;
+  font-size: 24px;
+  color: darkslategrey;
+}
+
+@media (max-width: 860px) {
+  .container,
+  .container__good {
+    margin: 32px 32px 0;
+    max-width: 280px;
+  }
+
+  .container,
+  .container__good {
+    font-size: 12px;
+  }
+}

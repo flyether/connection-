@@ -1,0 +1,54 @@
+<form
+  class="form__container"
+  [formGroup]="myReactForm"
+  (ngSubmit)="submitForm()"
+>
+
+
+
+<div class="row">  <h3 class="form__title">Create group</h3> <button class="del" type="button"   (click)="closeModal.emit()">X </button></div>
+
+ 
+    <label class="label" htmlFor="name">name</label>
+    <input
+      [ngClass]="
+     {
+     
+      form__input: true,
+      error:  myReactForm.controls['name'].invalid &&
+        myReactForm.controls['name'].touched,
+     } "
+      formControlName="name"
+      type="text"
+    />
+  
+    <span
+      *ngIf="
+        myReactForm.controls['name'].invalid &&
+        (myReactForm.controls['name'].touched)
+      "
+      class="error__message"
+    >
+      <ng-container *ngIf="myReactForm.controls['name'].errors?.required">
+        Please enter a name
+      </ng-container>
+      <ng-container *ngIf="myReactForm.controls['name'].errors?.pattern">
+        allowed only letters or spaces
+      </ng-container>
+      <ng-container *ngIf="myReactForm.controls['name'].errors?.maxLength">
+        maximum 30 characters
+      </ng-container>
+    </span>
+
+
+
+  <app-button-standard
+    [type]="'submit'"
+    [text]="'create'"
+    [disabled]="myReactForm.invalid"
+  ></app-button-standard>
+
+
+
+ 
+</form>

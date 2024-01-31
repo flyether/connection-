@@ -1,0 +1,9 @@
+<div  class= "container">
+   <span> {{message | async}}</span>
+   
+   <app-button-standard
+   [type]="'button'"
+   [text]="'close'"
+   (buttonClick)="clear()"
+ ></app-button-standard>
+ </div>

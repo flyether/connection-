@@ -1,0 +1,9 @@
+<!-- 
+<app-todo-list></app-todo-list> -->
+
+<button class="container"  (click)="onClick()">анимация</button>
+<!-- v1 -->
+<div class="text" *ngIf="shown" @fadeIn @fadeOut>1 </div>
+
+<!-- <div class="text" [@fadeInOut]="shown ? 'open' : 'close' " (@fadeInOut.start)="onAnimationStart($event)" (@fadeInOut.done)="onAnimationDone($event)" > 2</div> -->
+<div class="text" *ngIf="shown" @fadeInOut3>3</div>

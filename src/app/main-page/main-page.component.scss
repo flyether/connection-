@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+  margin: auto;
+  max-width: 1440px;
+  gap: 10px;
+}
+
+.wrapper {
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  min-height: 300px;
+  border: 2px solid rgb(214, 192, 145);
+}
+.button_block {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 50px;
+}
+.timer {
+  width: 80px;
+  border: #0e8369 solid 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  font-weight: bold;
+  background-color: rgb(240, 216, 186);
+  box-shadow: 2px 0px 4px 0px #1fa87b;
+  height: 32px;
+  color: #0e8369;
+  border-radius: 5px;
+}

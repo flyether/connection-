@@ -1,0 +1,34 @@
+<form
+  class="form"
+  [formGroup]="myReactForm"
+  (ngSubmit)="submitForm()"
+>
+  <input
+  placeholder="send message"
+    [ngClass]="
+     {
+     
+      form__input: true,
+      error:  myReactForm.controls['message'].invalid &&
+        myReactForm.controls['message'].touched,
+     } "
+    formControlName="message"
+    type="text"
+  />
+
+  <span
+    *ngIf="
+      myReactForm.controls['message'].invalid &&
+      myReactForm.controls['message'].touched
+    "
+    class="error__message"
+  >
+    Please enter a message
+  </span>
+
+  <app-button-standard
+    [type]="'submit'"
+    [text]="'send'"
+    [disabled]="myReactForm.invalid"
+  ></app-button-standard>
+</form>

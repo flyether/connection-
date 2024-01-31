@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  margin: 5px 0 5px 0;
+  border: 2px solid rgb(214, 192, 145);
+}
+.link {
+  cursor: pointer;
+}
+
+.link:hover {
+  color: rgb(121, 235, 191);
+  font-weight: bold;
+}
+
+.anotherColor {
+  background-color: rgb(181, 113, 245);
+}
+
+.del {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  color: rgb(48, 45, 45);
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+}

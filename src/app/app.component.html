@@ -1,0 +1,5 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+<!-- <app-loading *ngIf="(showLoading$ | async)"></app-loading> -->
+<app-error-modal *ngIf="errorServer$ | async as errorData" [errorIn] = "errorData"> </app-error-modal>
+<app-modal-ok *ngIf="okModal$ | async "></app-modal-ok>

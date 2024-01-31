@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <app-modal  *ngIf="isModalCreate" (closeModal)="isModalCreate = false"></app-modal>
+  <h3>Group section</h3>
+  <div class="button_block">
+    <app-button-standard
+      [type]="'button'"
+      text="Update"
+      [disabled]="isDisabledGroup"
+      (buttonClick)="onClickUpdate()"
+    ></app-button-standard>
+    <div  *ngIf="timerVisibleGroup">
+      <div *ngIf="  timer$ | async as timer">
+        <div class="timer">{{ timer + 1 }}</div>
+      </div>
+    </div>
+
+    <app-button-standard
+      [type]="'button'"
+      text="Create"
+      (buttonClick)="isModalCreate = !isModalCreate"
+    ></app-button-standard>
+  </div>
+  <div *ngIf="groupList$ | async as groupList">
+    <ng-container *ngIf="groupList.length > 0">
+      <app-group-list
+        *ngFor="let group of groupList"
+        [groupList]="group"
+      ></app-group-list>
+    </ng-container>
+  </div>
+
+ 
+</div>
+<div class="wrapper">
+  <h3>People section</h3>
+  <div class="button_block">
+    <app-button-standard
+      [type]="'button'"
+      [disabled]="isDisabledPeople"
+      text="Update"
+      (buttonClick)="onClickUpdatePeople()"
+    ></app-button-standard>
+    <div *ngIf="timerVisiblePeople">
+      <div *ngIf=" timerPeople$ | async as timerPeople">
+        <div class="timer">{{ timerPeople + 1 }}</div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="peopleList$ | async as peopleList">
+    <ng-container *ngIf="peopleList.length > 0">
+      <app-people-list
+        *ngFor="let people of peopleList"
+        [people]="people"
+      ></app-people-list>
+    </ng-container>
+  </div>
+
+</div>
